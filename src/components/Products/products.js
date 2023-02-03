@@ -3,6 +3,10 @@ import './product.css';
 import shoe from './shoe.png';
 import {Link } from "react-router-dom";
 
+fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+
 function Products() {
   var set = 12;
     return(
