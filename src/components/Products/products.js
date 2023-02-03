@@ -32,7 +32,7 @@ function Productss() {
     </div>
   </div>
   <div className="header1">
-    <p className="h"><li class="fa fa-tag fa-10x"></li> &nbsp;HOT DEALS <span class="fa fa-arrow-right float-right"></span></p>
+    <p className="h"><li class="fa fa-tag fa-10x"></li> &nbsp;HOTDEALS <span class="fa fa-arrow-right float-right"></span></p>
     {/* <img src={hot} className="hot"/> */}
   </div>
   <div class="flex flex-col bg-white m-auto p-auto">
