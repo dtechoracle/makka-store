@@ -3,11 +3,19 @@ import './product.css';
 import shoe from './shoe.png';
 import {Link } from "react-router-dom";
 
+componentDidMonunt (){
 fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
-            .then(json=>console.log(json))
+            .then(json=>{
+                this.setState({
+                    items: json,
+                    DataisLoaded: true
+                });
+})
+}
 
 function Products() {
+            const { DataisLoaded, items } = this.state;
   var set = 12;
     return(
         <div>
@@ -101,6 +109,7 @@ function Products() {
     <p className="h"><li class="fa fa-calendar fa-10x"></li> &nbsp;JANUARY SALES <span class="fa fa-arrow-right float-right"></span></p>
     {/* <img src={hot} className="hot"/> */}
   </div>
+items.map((item) => ( 
   <div class="flex flex-col bg-white m-auto p-auto">
 <h1
         class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800"
@@ -116,62 +125,15 @@ function Products() {
             <div
               class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
             >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
+              <img src={ item.image } class="scroll-image"/><p className="price">{ item.price }</p><span className="pName">{ item.title }</span>
             </div>
           </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg" 
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <img src={shoe} class="scroll-image"/><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-          <div class="inline-block px-3">
-            <div
-              class="w-64 h-70 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out text-green-500 text-lg font-bold text-center p-4 rounded-lg"
-            >
-              <Link to={`/view?id=${set}`}><img src={shoe} class="scroll-image"/></Link><p className="price">#30,000</p><span className="pName">Nike sneaker</span>
-            </div>
-          </div>
-        </div>
+</div>
+          
   </div>
   </div>
 </div>
+)
     );
 }
 
