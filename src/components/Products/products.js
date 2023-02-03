@@ -14,7 +14,7 @@ fetch('https://fakestoreapi.com/products')
 })
 }
 
-function Products() {
+function Productss() {
             const { DataisLoaded, items } = this.state;
   var set = 12;
     return(
@@ -137,4 +137,4 @@ items.map((item) => (
     );
 }
 
-export default Products;
+export default Productss;
