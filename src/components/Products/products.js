@@ -106,7 +106,7 @@ function Productss() {
       </div>
 </div>
 <div className="header2">
-    <p className="h"><li class="fa fa-calendar fa-10x"></li> &nbsp;JANUARY SALES <span class="fa fa-arrow-right float-right"></span></p>
+    <p className="h"><li class="fa fa-calendar fa-10x"></li> &nbsp;JANUAR SALES <span class="fa fa-arrow-right float-right"></span></p>
     {/* <img src={hot} className="hot"/> */}
   </div>
 items.map((item) => ( 
