@@ -2,9 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout.js";
 import Login from "./components/users/login.js";
 import All from "./components/allprducts/allproduct.js";
-// import Products from "./components/Products/products.js";
+import Products2 from "./components/Products/products.js";
 import View from "./components/Products/view.js";
-import Productss from "./components/Products/products.js";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
           <Route path="Login" element={<Login />} />
           <Route path="Products" element={<All />} />
           <Route path="View" element={<View />} />
-          <Route path="pp" element ={<Productss/>} />
+          <Route path="pp" element ={<Products/>} />
       </Routes>
     </div>
   );
